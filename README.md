@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [My Solution](https://your-solution-url.com)
-- Live Site URL: [Live Demo](https://your-live-site-url.com)
+- Solution URL: [My Solution](https://www.frontendmentor.io/solutions/responsive-notification-page-built-with-html-css-and-javascript-ez5FFWd39Q)
+- Live Site URL: [Live Demo](https://mohamed-devp.github.io/notification-page/)
 
 ## My process
 
