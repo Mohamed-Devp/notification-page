@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary colors */
+    --red: hsl(1, 90%, 64%);
+    --blue: hsl(219, 85%, 26%);
+
+    /* Neutral colors */
+    --very-dark-blue: hsl(224, 21%, 14%);
+    --dark-grayish-blue: hsl(219, 12%, 42%);
+    --grayish-blue: hsl(219, 14%, 63%);
+    --light-grayish-blue: hsl(211, 68%, 94%);
+
+    /* Fonts */
+    --primary-font: "Plus Jakarta Sans";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 0;
+    background-color: hsl(210, 60%, 98%);
+}
+
+main {
+    width: clamp(650px, 45%, 850px);
+    padding: 2rem;
+    border-radius: 14px;
+    font-family: var(--primary-font);
+    background-color: white;
+}
+
+/* Header section */
+header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+header h2 {
+    color: var(--very-dark-blue);
+    font-weight: 800;
+}
+
+.unread-notifications {
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+    background-color: var(--blue);
+}
+
+.toggle-unread {
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--dark-grayish-blue);
+    transition: color .2s ease-in;
+}
+
+.toggle-unread:hover {
+    color: var(--blue);
+}
+
+/* Notifications section */
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 2rem;
+    transition: background-color .2s ease-in;
+}
+
+.notification {
+    flex-shrink: 0;
+    min-height: 75px;
+    border-radius: 8px;
+}
+
+.new {
+    background-color: hsla(211, 68%, 94%, 0.3);
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    min-height: 75px;
+    padding-right: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    margin: 0 1.25rem;
+    object-fit: cover;
+    border-radius: 100px;
+}
+
+.content {
+    padding: 12px 0;
+}
+
+.content p:first-child {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--dark-grayish-blue);
+}
+
+.new .content p:first-child:after {
+    content: '';
+    display: inline-block;
+    margin-left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    background-color: var(--red);
+}
+
+.content p:nth-child(2) {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--grayish-blue);
+}
+
+.content span {
+    font-weight: 800;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.content span:hover {
+    color: var(--blue);
+}
+
+.post:hover, .group:hover {
+    text-decoration: underline;
+}
+
+.username {
+    color: var(--very-dark-blue);
+}
+
+.post {
+    color: var(--dark-grayish-blue);
+}
+
+.group {
+    color: var(--blue);
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform .1s ease-in;
+}
+
+.image:hover {
+    transform: scale(0.97);
+}
+
+.message {
+    padding: 0 12px 12px calc(40px + 2.5rem);
+}
+
+.message p {
+    padding: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    color: var(--dark-grayish-blue);
+    border-radius: 4px;
+    border: 1px solid hsl(219, 14%, 88%);
+    cursor: pointer;
+    transition: background-color .2s ease-in;
+}
+
+.message p:hover {
+    background-color: var(--light-grayish-blue);
+}
+
+.scroll-up {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    left: 50%; bottom: 50px;
+    transform: translateX(-50%);
+    border-radius: 100px;
+    border: 1px solid var(--light-grayish-blue);
+    color: var(--blue);
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Media queries */
+@media screen and (max-width: 650px) {
+    body {
+        padding: 0;
+    }
+
+    main {
+        width: 100%;
+        min-height: max(100%, 800px);
+        border-radius: 0;
+    }
+
+    .content {
+        padding-right: 10px;
+    }
+
+    .image {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    header h2 {
+        font-size: 1.3rem;
+    }
+
+    main {
+        padding: 2rem 0.75rem;
+    }
+
+    .avatar {
+        margin: 0 1rem;
+    }
+
+    .message {
+        padding-left: calc(40px + 1.5rem);
+    }
+}
