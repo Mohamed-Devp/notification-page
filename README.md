@@ -14,7 +14,7 @@ This is a solution to the [Notifications page challenge on Frontend Mentor](http
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [License](#license)
 
 ## Overview
 
